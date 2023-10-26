@@ -1,0 +1,86 @@
+﻿@model Quiz.Models.TBL_QUESTIONS
+
+@{
+    ViewBag.Title = "AddQuestions";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="container">
+    <h2 class="text-center mt-4">Add Questions</h2>
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <h1 class="text-success">@TempData["msg"]</h1>
+                <div class="form-horizontal">
+                    <div class="form-group mt-3">
+                        @Html.LabelFor(model => model.Q_FK_CATID, "Category", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10 mt-2">
+                            @Html.DropDownList("Q_FK_CATID", ViewBag.list as SelectList, "-- Select Category --", htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Q_FK_CATID, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <hr />
+
+                    <section>
+                        <h4>Question Details</h4>
+                        <div class="form-group mt-4">
+                            @Html.LabelFor(model => model.Q_TEXT, "Question", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10 mt-2">
+                                @Html.EditorFor(model => model.Q_TEXT, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Q_TEXT, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            @Html.LabelFor(model => model.OPA, "Option A", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10 mt-2">
+                                @Html.EditorFor(model => model.OPA, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.OPA, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            @Html.LabelFor(model => model.OPB, "Option B", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10 mt-2">
+                                @Html.EditorFor(model => model.OPB, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.OPB, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            @Html.LabelFor(model => model.OPC, "Option C", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10 mt-2">
+                                @Html.EditorFor(model => model.OPC, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.OPC, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            @Html.LabelFor(model => model.OPD, "Option D", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10 mt-2">
+                                @Html.EditorFor(model => model.OPD, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.OPD, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-5">
+                            @Html.LabelFor(model => model.COP, "Correct Option", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10 mt-2">
+                                @Html.EditorFor(model => model.COP, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.COP, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10 mt-4">
+                            <input type="submit" value="Add Question" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

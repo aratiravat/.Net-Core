@@ -1,0 +1,54 @@
+﻿
+@using PagedList.Mvc
+@model PagedList.IPagedList<Quiz.Models.score>
+
+@{
+    ViewBag.Title = "records";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>records</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EXAM_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EXAM_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EXAM_STD_SCORE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TBL_STUDENT.S_NAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXAM_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXAM_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXAM_STD_SCORE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TBL_STUDENT.S_NAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EXAM_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EXAM_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EXAM_ID })
+        </td>
+    </tr>
+}
+
+</table>

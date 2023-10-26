@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<style>
+    .dashboard-title {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .admin-dashboard {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .dashboard-info {
+        flex: 1;
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+        .dashboard-info h2 {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+    .btn-start-quiz {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: black;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 20px;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+            .dashboard-info .btn-start-quiz:hover {
+                background-color: #0056b3;
+            }
+
+    .dashboard-widgets {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .widget {
+        background-color: #fff;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+        .widget h3 {
+            margin-top: 0;
+        }
+</style>
+<h1 class="dashboard-title mt-5">Admin Dashboard</h1>
+
+<div class="admin-dashboard">
+    <div class="dashboard-info">
+        <h2>Welcome to the admin dashboard.</h2>
+
+        <a href="@Url.Action("Addcategory", "Home")" class="btn-start-quiz">Add Category</a>
+        <br />
+        <br />
+        <a href="@Url.Action("AddQuestions", "Home")" class="btn-start-quiz">Add Question</a>
+    </div>
+
+</div>

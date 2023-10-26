@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    body {
+        background-image: url('../../Content/img/exam_bg.jpg');
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .container{
+        align-content: center;
+    }
+
+
+    h1 {
+        font-size: 40px;
+        color: darkblue;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+
+
+    .btn-start-quiz {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 20px;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-start-quiz:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<main>
+    <div class="container">
+        
+       
+        <a href="@Url.Action("slogin", "Home")" class="btn-start-quiz">Start Quiz</a>
+    </div>
+</main>

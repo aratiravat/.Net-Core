@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>End Exam</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background color */
+        }
+
+        .container {
+            text-align: center; /* Center-align content within the container */
+            margin-top: 100px; /* Add some top margin for spacing */
+        }
+
+        h2 {
+            color: #007bff; /* Blue heading color */
+        }
+
+        h4 {
+            color: #28a745; /* Green subheading color */
+        }
+
+        h5 {
+            color: #333; /* Black score color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Congratulations!!!</h2>
+        <h4 class="mt-3">Your exam has been submitted successfully.</h4>
+        <h5 class="mt-5">Your score: @TempData["ScoreExam"]</h5>
+        <br />
+        <br />
+        @Html.ActionLink("Logout", "Logout", null, new { @class = "list-group-item btn-sm", style = "background-color:transparent; border:none;" })
+    </div>
+</body>
+</html>

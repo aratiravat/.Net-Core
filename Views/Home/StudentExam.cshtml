@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Exam</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<style>
+    body {
+        background-image: url('../../Content/img/room_bg.jpg');
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0; /* Set a fallback background color */
+    }
+
+    .container {
+        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+        border-radius: 10px;
+        padding: 50px;
+        margin-top: 70px;
+        max-width: 400px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        font-family: 'Algebrian', sans-serif;
+    }
+
+    .alert {
+        margin-top: 20px;
+    }
+
+    .form-control {
+        margin-bottom: 15px;
+    }
+
+    .btn-info {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+</style>
+<body>
+    @if (@ViewBag.error != null)
+    {
+        <div class="alert alert-danger">
+            <strong>Error!</strong> @ViewBag.error
+        </div>
+    }
+
+    @using (Html.BeginForm())
+    {
+        <div class="container mt-5">
+            <h3 style="text-align: center; color: #333; font-family: 'Algebrian', sans-serif;">Enter Room Code</h3>
+            <input type="text" id="room" name="room" placeholder="Room Number" class="form-control mt-3" />
+            <button type="submit" class="btn btn-info btn-block mt-3">SUBMIT</button>
+        </div>
+    }
+</body>
+</html>
